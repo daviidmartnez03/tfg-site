@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo de Fin de Grado</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        /* Pequeños ajustes visuales para darle un toque más premium */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            color: white;
+            padding: 80px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background-color: #000;
+        }
+        .action-buttons .btn {
+            padding: 10px 24px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .action-buttons .btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">TFG</a>
+            <div class="d-flex gap-2 align-items-center">
+                <a href="https://www.linkedin.com/in/dmartinezsanz/" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                
+                <a href="https://github.com/daviidmartnez03/Test-Procedure-Creator" target="_blank" class="btn btn-outline-dark btn-sm">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill">Ingeniería en Tecnologías de la Telecomunicación</span>
+            <h1 class="display-4 fw-bold mb-3">Herramienta de generación de pruebas usando Jinja2 y textX</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+                Este trabajo presenta el desarrollo de una herramienta de software que automatiza la creación de pruebas  
+                para  la  certificación  de  software  crítico  en  la  industria  aeronáutica.
+            </p>
+            
+            <div class="d-flex justify-content-center gap-3 action-buttons">
+                <a href="./assets/Memoria TFG.pdf" target="_blank" class="btn btn-light btn-lg text-primary shadow-sm">
+                    <i class="bi bi-file-earmark-pdf-fill me-2"></i>Leer Memoria
+                </a>
+                <a href="https://github.com/daviidmartnez03/Test-Procedure-Creator" target="_blank" class="btn btn-dark btn-lg shadow-sm">
+                    <i class="bi bi-github me-2"></i>Código Fuente
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5 my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+                <h2 class="fw-bold mb-4">Demostración del Proyecto</h2>
+                <p class="text-muted mb-4">En el siguiente vídeo se explica el funcionamiento de la arquitectura, el parseo del DSL y la generación de los documentos finales.</p>
+                
+                <div class="video-container ratio ratio-16x9">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=OraYXEr0Irg&t=215s" 
+                        title="Demostración TFG" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-5 border-top">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">Tecnologías y Herramientas</h3>
+            <div class="d-flex justify-content-center flex-wrap gap-4 text-muted fs-4">
+                <span><i class="bi bi-filetype-py text-primary"></i> Python</span>
+                <span><i class="bi bi-braces text-danger"></i> TextX / Jinja2</span>
+                <span><i class="bi bi-git text-warning"></i> Git</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; Trabajo realizado por David Martínez Sanz - Universidad Rey Juan Carlos (2025-2026) </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
