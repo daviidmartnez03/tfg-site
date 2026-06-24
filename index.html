@@ -17,26 +17,70 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: #f8f9fa;
         }
+        
+        /* Hero-section para poder posicionar el vídeo dentro */
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            position: relative;
+            overflow: hidden;
             color: white;
-            padding: 80px 0;
+            padding: 120px 0; /* Aumentado para que el vídeo luzca más */
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #0a58ca; 
         }
+
+        /* Clase para el vídeo de fondo */
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Capa semitransparente para que el título se lea bien sobre el vídeo */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 88, 202, 0.75);
+            z-index: 1;
+        }
+
+        /* Aseguramos que el contenido esté por encima del vídeo y de la capa */
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
         .video-container {
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
             background-color: #000;
         }
+        
         .action-buttons .btn {
-            padding: 10px 24px;
+            padding: 12px 28px; /* Botones un poco más grandes para mayor presencia */
             font-weight: 500;
             border-radius: 8px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+        
         .action-buttons .btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15) !important;
+        }
+
+        /* Estilo para la nueva caja de descripción (ahora se usa en ambas secciones) */
+        .project-description {
+            text-align: justify;
+            line-height: 1.8;
+            color: #495057;
+            font-size: 1.15rem;
         }
     </style>
 </head>
@@ -44,7 +88,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">TFG</a>
+            <a class="navbar-brand fw-bold text-primary" href="#">Trabajo Fin de Grado</a>
             <div class="d-flex gap-2 align-items-center">
                 <a href="https://www.linkedin.com/in/dmartinezsanz/" target="_blank" class="btn btn-outline-primary btn-sm">
                     <i class="bi bi-linkedin"></i> LinkedIn
@@ -58,30 +102,50 @@
     </nav>
 
     <header class="hero-section text-center">
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="./videos/fondo_video.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+
         <div class="container">
-            <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill">Ingeniería en Tecnologías de la Telecomunicación</span>
-            <h1 class="display-4 fw-bold mb-3">Herramienta de generación de pruebas usando Jinja2 y textX</h1>
-            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
-                Este trabajo presenta el desarrollo de una herramienta de software que automatiza la creación de pruebas  
-                para  la  certificación  de  software  crítico  en  la  industria  aeronáutica.
-            </p>
+            <span class="badge bg-light text-primary mb-3 px-3 py-2 rounded-pill shadow-sm">Ingeniería en Tecnologías de la Telecomunicación</span>
+            <h1 class="display-4 fw-bold mb-5">Herramienta de generación de pruebas usando Jinja y textX</h1>
             
-            <div class="d-flex justify-content-center gap-3 action-buttons">
+            <div class="d-flex justify-content-center gap-4 action-buttons">
                 <a href="./assets/Memoria TFG.pdf" target="_blank" class="btn btn-light btn-lg text-primary shadow-sm">
                     <i class="bi bi-file-earmark-pdf-fill me-2"></i>Leer Memoria
                 </a>
-                <a href="https://github.com/daviidmartnez03/Test-Procedure-Creator" target="_blank" class="btn btn-dark btn-lg shadow-sm">
+                <a href="https://github.com/daviidmartnez03/Test-Procedure-Creator" target="_blank" class="btn btn-dark btn-lg shadow-sm border border-secondary">
                     <i class="bi bi-github me-2"></i>Código Fuente
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="container py-5 my-4">
+    <section class="container py-5 mt-3 border-bottom">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold mb-4 text-dark">Descripción</h2>
+                
+                <p class="project-description mb-0 mx-auto" style="max-width: 900px;">
+                    Este trabajo presenta el desarrollo de una herramienta de software que automatiza la creación de pruebas para la certificación 
+                    de software crítico en la industria aeronáutica. Los resultados obtenidos demuestran la viabilidad de unificar la validación de 
+                    múltiples requisitos mediante la identificación de patrones de pruebas comunes bajo el principio de separar la lógica de validación 
+                    de los datos concretos a evaluar. Este flujo permite optimizar el ciclo de verificación y superar las ineficiencias de métodos tradicionales 
+                    basados en la creación manual de pruebas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-2">
         <div class="row justify-content-center">
             <div class="col-lg-9 text-center">
                 <h2 class="fw-bold mb-4">Demostración del Proyecto</h2>
-                <p class="text-muted mb-4">En el siguiente vídeo se explica el funcionamiento de la arquitectura, el parseo del DSL y la generación de los documentos finales.</p>
+                
+                <p class="project-description mb-4">En el siguiente vídeo se explica el funcionamiento de la herramienta mostrando un caso de uso completo, ilustrando el flujo de trabajo que abarca desde la
+                    configuración inicial del entorno y la definición de los datos, hasta la generación automatizada de las pruebas finales.</p>
                 
                 <div class="video-container ratio ratio-16x9">
                     <iframe 
@@ -99,7 +163,7 @@
 
     <section class="bg-white py-5 border-top">
         <div class="container text-center">
-            <h3 class="fw-bold mb-4">Tecnologías y Herramientas</h3>
+            <h3 class="fw-bold mb-4">Tecnologías principales y Herramientas</h3>
             <div class="d-flex justify-content-center flex-wrap gap-4 text-muted fs-4">
                 <span><i class="bi bi-filetype-py text-primary"></i> Python</span>
                 <span><i class="bi bi-braces text-danger"></i> TextX / Jinja2</span>
