@@ -23,7 +23,7 @@
             position: relative;
             overflow: hidden;
             color: white;
-            padding: 120px 0; /* Aumentado para que el vídeo luzca más */
+            padding: 120px 0; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background-color: #0a58ca; 
         }
@@ -64,7 +64,7 @@
         }
         
         .action-buttons .btn {
-            padding: 12px 28px; /* Botones un poco más grandes para mayor presencia */
+            padding: 12px 28px; 
             font-weight: 500;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -146,18 +146,37 @@
     </section>
 
     <section class="container py-5 my-2">
-        <div class="row justify-content-center">
-            <div class="col-lg-9 text-center">
-                <h2 class="fw-bold mb-4">Demostración del Proyecto</h2>
-                
-                <p class="project-description mb-4">En el siguiente vídeo se explica el funcionamiento de la herramienta mostrando un caso de uso completo, ilustrando el flujo de trabajo que abarca desde la
-                    configuración inicial del entorno y la definición de los datos, hasta la generación automatizada de las pruebas finales.</p>
-                
-                <div class="video-container ratio ratio-16x9">
-                    <video controls preload="metadata">
-                        <source src="./assets/video_demo.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de vídeo.
-                    </video>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold mb-4">Demostraciones del Proyecto</h2>
+                <p class="project-description mb-0 mx-auto">
+                    A continuación, se presentan dos demostraciones clave del proyecto. En primer lugar, el flujo de trabajo de la herramienta de generación de pruebas. En segundo lugar, el funcionamiento del asistente de inteligencia artificial integrado.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6">
+                <div class="d-flex flex-column h-100">
+                    <h4 class="h5 fw-bold text-center mb-3 text-secondary">1. Flujo de la Herramienta</h4>
+                    <div class="video-container ratio ratio-16x9 mt-auto">
+                        <video controls preload="metadata" poster="./assets/poster_tool_demo.png">
+                            <source src="./assets/tool_demo.mp4#t=0.001" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de vídeo.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column h-100">
+                    <h4 class="h5 fw-bold text-center mb-3 text-secondary">2. Asistente de IA (Gemini)</h4>
+                    <div class="video-container ratio ratio-16x9 mt-auto">
+                        <video controls preload="metadata" poster="./assets/poster_ia_demo.png">
+                            <source src="./assets/ia_demo.mp4#t=0.001" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de vídeo.
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
